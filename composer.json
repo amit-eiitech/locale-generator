@@ -1,0 +1,28 @@
+{
+    "name": "eii/locale-generator",
+    "description": "A Laravel CLI to extract and translate Blade file strings to JSON language files",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amit Haldar",
+            "email": "amit.haldar@eiitechsolutions.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Eii\\LocaleGenerator\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Eii\\LocaleGenerator\\LocaleGeneratorServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "google/cloud-translate": "^2.0"
+    }
+}
