@@ -1,6 +1,9 @@
 # Locale Generator
 
-A Laravel CLI command to extract `__()` strings from Blade files and translate them to JSON language files using Google Cloud Translate or DeepL.
+**Locale Generator** is a Laravel Artisan command that simplifies multilingual development by automatically extracting `__()` strings from Blade templates and generating JSON language files.  
+It optionally integrates with **Google Cloud Translate** or **DeepL** to provide instant translations, helping you speed up localization workflows.
+
+---
 
 ## Installation
 
@@ -33,6 +36,8 @@ composer require eii/locale-generator
 
 ## Usage
 
+Run the lang:extract command:
+
 ```bash
 php artisan lang:extract welcome --locales=ja,es,de --translate=google
 php artisan lang:extract mail.notification --locales=fr,es --translate=deepl
@@ -53,10 +58,10 @@ Edit `config/locale-generator.php` to customize:
 ## Requirements
 
 - PHP 8.1+
-- Laravel 9.0, 10.0, or 11.0
+- Laravel 9.0, 10.0, 11.0, 12.0
 - Google Cloud Translate API (for `google` provider)
 - DeepL API (for `deepl` provider)
 
 ## License
 
-MIT
+This package is open-sourced software licensed under the MIT license.
