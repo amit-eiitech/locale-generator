@@ -35,8 +35,14 @@ class TranslateBladeToJson extends Command
 
         $this->info("Found " . count($strings) . " strings in {$fileInput}");
 
+        $langPath = resource_path('lang');
+        if (!File::exists($langPath)) {
+            File::makeDirectory($langPath, 0755, true);
+            $this->info("Created lang directory at: {$langPath}");
+        }
+
         foreach ($locales as $locale) {
-            $jsonPath = resource_path("lang/{$locale}.json");
+            $jsonPath = "{$langPath}/{$locale}.json";
             $translations = File::exists($jsonPath) ? json_decode(File::get($jsonPath), true) : [];
 
             foreach ($strings as $string) {
